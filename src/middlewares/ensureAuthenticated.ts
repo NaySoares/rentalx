@@ -9,8 +9,8 @@ interface IPayload {
 }
 
 export async function ensureAuthenticated(
-  response: Response,
   request: Request,
+  response: Response,
   next: NextFunction,
 ) {
   const authHeader = request.headers.authorization;
