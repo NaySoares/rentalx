@@ -1,6 +1,6 @@
 import { getRepository, Repository } from 'typeorm';
 
-import { ICreateUsersDTO } from '../../dtos/ICreateUsersDTO';
+import { ICreateUserDTO } from '../../dtos/ICreateUserDTO';
 import { User } from '../../entities/User';
 import { IUsersRepository } from '../IUsersRepository';
 
@@ -18,7 +18,7 @@ class UserRepository implements IUsersRepository {
     driver_license,
     id,
     avatar,
-  }: ICreateUsersDTO): Promise<void> {
+  }: ICreateUserDTO): Promise<void> {
     const user = this.repository.create({
       name,
       password,
