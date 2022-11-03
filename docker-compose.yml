@@ -6,6 +6,18 @@ networks:
       name: super-rede
 
 services:
+  database_postgres:
+    image: postgres
+    container_name: database_postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=rentalx
+    volumes:
+      - pgdata:/data/postgres
   app:
     build: .
     container_name: rentalx
